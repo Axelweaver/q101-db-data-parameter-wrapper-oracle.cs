@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Oracle.ManagedDataAccess.Client;
+using Q101.DbDataParameterWrapper.Enums;
 
 namespace Q101.DbDataParameterWrapper.Oracle.Converters
 {

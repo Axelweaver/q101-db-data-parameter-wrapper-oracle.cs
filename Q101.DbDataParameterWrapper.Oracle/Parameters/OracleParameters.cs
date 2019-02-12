@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using Q101.DbDataParameterWrapper.Parameters;
 
 namespace Q101.DbDataParameterWrapper.Oracle.Parameters
 {

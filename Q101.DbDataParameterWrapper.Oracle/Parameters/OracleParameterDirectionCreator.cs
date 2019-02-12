@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using Q101.DbDataParameterWrapper.Enums;
+using Q101.DbDataParameterWrapper.Parameters;
 
 namespace Q101.DbDataParameterWrapper.Oracle.Parameters
 {
@@ -58,6 +60,44 @@ namespace Q101.DbDataParameterWrapper.Oracle.Parameters
             return _oracleParameters;
         }
 
+
+        /// <inheritdoc />
+        public IDbDataParameter DateTime(string name, object value = null)
+        {
+            var parameter = _oracleParameterCreatе(name, ParameterDbType.DateTime, value, null);
+
+            return parameter;
+        }
+
+        /// <inheritdoc />
+        public IDbParameters AddDateTime(string name, object value = null)
+        {
+            var parameter = DateTime(name, value);
+
+            ParametersList.Add(parameter);
+
+            return _oracleParameters;
+        }
+
+
+        /// <inheritdoc />
+        public IDbDataParameter TimeStamp(string name, object value = null)
+        {
+            var parameter = _oracleParameterCreatе(name, ParameterDbType.TimeStamp, value, null);
+
+            return parameter;
+        }
+
+        /// <inheritdoc />
+        public IDbParameters AddTimeStamp(string name, object value = null)
+        {
+            var parameter = TimeStamp(name, value);
+
+            ParametersList.Add(parameter);
+
+            return _oracleParameters;
+        }
+
         /// <inheritdoc />
         public IDbDataParameter Varchar2(string name, object value = null, int? size = null)
         {
@@ -70,6 +110,43 @@ namespace Q101.DbDataParameterWrapper.Oracle.Parameters
         public IDbParameters AddVarchar2(string name, object value = null, int? size = null)
         {
             var parameter = Varchar2(name, value, size);
+
+            ParametersList.Add(parameter);
+
+            return _oracleParameters;
+        }
+
+
+        /// <inheritdoc />
+        public IDbDataParameter Varchar(string name, object value = null, int? size = null)
+        {
+            var parameter = _oracleParameterCreatе(name, ParameterDbType.Varchar, value, size);
+
+            return parameter;
+        }
+
+        /// <inheritdoc />
+        public IDbParameters AddVarchar(string name, object value = null, int? size = null)
+        {
+            var parameter = Varchar(name, value, size);
+
+            ParametersList.Add(parameter);
+
+            return _oracleParameters;
+        }
+
+        /// <inheritdoc />
+        public IDbDataParameter NVarchar(string name, object value = null, int? size = null)
+        {
+            var parameter = _oracleParameterCreatе(name, ParameterDbType.NVarchar2, value, size);
+
+            return parameter;
+        }
+
+        /// <inheritdoc />
+        public IDbParameters AddNVarchar(string name, object value = null, int? size = null)
+        {
+            var parameter = NVarchar(name, value, size);
 
             ParametersList.Add(parameter);
 
@@ -93,8 +170,98 @@ namespace Q101.DbDataParameterWrapper.Oracle.Parameters
 
             return _oracleParameters;
         }
+ 
+        /// <inheritdoc />
+        public IDbDataParameter Int(string name, object value = null, int? size = null)
+        {
+            var parameter = _oracleParameterCreatе(name, ParameterDbType.Int, value, size);
 
-        private List<IDbDataParameter> ParametersList =>
+            return parameter;
+        }
+
+        /// <inheritdoc />
+        public IDbParameters AddInt(string name, object value = null, int? size = null)
+        {
+            var parameter = Int(name, value, size);
+
+            ParametersList.Add(parameter);
+
+            return _oracleParameters;
+        }
+ 
+        /// <inheritdoc />
+        public IDbDataParameter Int64(string name, object value = null, int? size = null)
+        {
+            var parameter = _oracleParameterCreatе(name, ParameterDbType.Int64, value, size);
+
+            return parameter;
+        }
+
+        /// <inheritdoc />
+        public IDbParameters AddInt64(string name, object value = null, int? size = null)
+        {
+            var parameter = Int64(name, value, size);
+
+            ParametersList.Add(parameter);
+
+            return _oracleParameters;
+        }
+ 
+        /// <inheritdoc />
+        public IDbDataParameter Decimal(string name, object value = null, int? size = null)
+        {
+            var parameter = _oracleParameterCreatе(name, ParameterDbType.Decimal, value, size);
+
+            return parameter;
+        }
+
+        /// <inheritdoc />
+        public IDbParameters AddDecimal(string name, object value = null, int? size = null)
+        {
+            var parameter = Decimal(name, value, size);
+
+            ParametersList.Add(parameter);
+
+            return _oracleParameters;
+        }
+
+        /// <inheritdoc />
+        public IDbDataParameter Byte(string name, object value = null, int? size = null)
+        {
+            var parameter = _oracleParameterCreatе(name, ParameterDbType.Byte, value, size);
+
+            return parameter;
+        }
+
+        /// <inheritdoc />
+        public IDbParameters AddByte(string name, object value = null, int? size = null)
+        {
+            var parameter = Byte(name, value, size);
+
+            ParametersList.Add(parameter);
+
+            return _oracleParameters;
+        }
+ 
+        /// <inheritdoc />
+        public IDbDataParameter Bool(string name, object value = null, int? size = null)
+        {
+            var parameter = _oracleParameterCreatе(name, ParameterDbType.Bool, value, size);
+
+            return parameter;
+        }
+
+        /// <inheritdoc />
+        public IDbParameters AddBool(string name, object value = null, int? size = null)
+        {
+            var parameter = Bool(name, value, size);
+
+            ParametersList.Add(parameter);
+
+            return _oracleParameters;
+        }
+
+       private List<IDbDataParameter> ParametersList =>
             (List<IDbDataParameter>)_oracleParameters.Parameters;
     }
 }

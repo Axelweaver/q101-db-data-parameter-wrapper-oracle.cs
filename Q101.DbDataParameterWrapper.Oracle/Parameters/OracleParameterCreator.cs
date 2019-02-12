@@ -1,4 +1,8 @@
 ﻿using System.Data;
+using Oracle.ManagedDataAccess.Client;
+using Q101.DbDataParameterWrapper.Enums;
+using Q101.DbDataParameterWrapper.Oracle.Converters;
+using Q101.DbDataParameterWrapper.Parameters;
 
 namespace Q101.DbDataParameterWrapper.Oracle.Parameters
 {
